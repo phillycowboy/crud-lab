@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer';
 
 class Restaurant extends Component {
-
+  handleClick = () => {
+    this.props.deleteRestaurant(this.props.restuarant.id)
+  }
 
   render() {
-    const { restaurant } = this.props;
-    console.log("rest component", restaurant)
+    // console.log("props",this.props)
+    const { restuarant , deleteRestaurant} = this.props;
+
+    // console.log("rest component", restaurant)
+ 
     return (
       <div>
         <li>
-          {restaurant}
-          <button> X </button>
-          <ReviewsContainer restaurant={restaurant}/>
+          {restuarant.text}
+          <button onClick={() => this.handleClick()}> X </button>
+          <ReviewsContainer restuarant={restuarant}/>
         </li>
       </div>
     );
