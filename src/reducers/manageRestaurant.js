@@ -15,6 +15,8 @@ export default function manageRestaurants(state = {
                 return {...state, restaurants}
 
             case "ADD_REVIEW":
+                console.log("add review", state)
+                console.log("action", action)
                 const review = {text: action.review.text, restaurantId: action.review.restaurantId, id: cuid()}
                 return {...state, reviews:[...state.reviews, review] }
 

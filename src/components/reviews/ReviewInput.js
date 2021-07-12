@@ -21,6 +21,7 @@ class ReviewInput extends Component {
   }
 
   render() {
+    console.log("review input", this.props)
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>

@@ -3,21 +3,21 @@ import ReviewsContainer from '../../containers/ReviewsContainer';
 
 class Restaurant extends Component {
   handleClick = () => {
-    this.props.deleteRestaurant(this.props.restuarant.id)
+    this.props.deleteRestaurant(this.props.restaurant.id)
   }
 
   render() {
     // console.log("props",this.props)
-    const { restuarant , deleteRestaurant} = this.props;
+    const { restaurant , deleteRestaurant} = this.props;
 
     // console.log("rest component", restaurant)
  
     return (
       <div>
         <li>
-          {restuarant.text}
+          {restaurant.text}
           <button onClick={() => this.handleClick()}> X </button>
-          <ReviewsContainer restuarant={restuarant}/>
+          <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
     );
