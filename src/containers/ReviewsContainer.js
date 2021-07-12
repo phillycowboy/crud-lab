@@ -6,16 +6,17 @@ import { connect } from 'react-redux'
 class ReviewsContainer extends Component {
 
   render() {
+    console.log("reviews", this.props)
     return (
       <div>
-        <ReviewInput addReview={this.props.addReview} restaurantId={this.props.restaurantId}/>
+        <ReviewInput addReview={this.props.addReview} restaurantId={this.props.restaurant.id}/>
         <Reviews reviews={this.props.reviews} restaurantId={this.props.restaurant.id} deleteReview={this.props.deleteReview}/>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({reviews}) => {reviews}
+const mapStateToProps = ({reviews}) => { return ({reviews})}
 
 const mapDispatchToProps = (dispatch) => ({
   addReview: review => dispatch({type: "ADD_REVIEW", review}),
