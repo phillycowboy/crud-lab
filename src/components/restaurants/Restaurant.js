@@ -6,11 +6,11 @@ class Restaurant extends Component {
 
   render() {
     const { restaurant } = this.props;
-
+    console.log("rest component", restaurant)
     return (
       <div>
         <li>
-          {restaurant.text}
+          {restaurant}
           <button> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
@@ -20,3 +20,8 @@ class Restaurant extends Component {
 };
 
 export default Restaurant;
+
+// return (<Restaurant 
+//   key={restaurant.id}
+//   restuarant={restaurant} 
+  // deleteRestaurant={deleteRestaurant}

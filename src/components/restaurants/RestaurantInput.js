@@ -16,6 +16,7 @@ class RestaurantInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
+    // debugger
     this.props.addRestaurant(this.state.text)
     this.setState({
       text: ''
